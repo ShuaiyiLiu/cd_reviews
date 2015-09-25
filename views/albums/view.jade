@@ -1,0 +1,24 @@
+extends ../base.jade
+
+block content
+  h3 Album
+    small
+
+  .btn-group
+    a(href="/albums/#{album.id}/edit", class='btn btn-primary btn-sm')
+      i.glyphicon.glyphicon-edit
+      span  Edit album
+    a(href="/albums/#{album.id}/delete", class='btn btn-danger btn-sm')
+      i.glyphicon.glyphicon-trash
+      span  Delete album
+
+  .media
+    .media-left
+      img(src=album.imageUrl || "http://placekitten.com/g/128/192")
+    .media-body
+      h4= album.title
+        | &nbsp;
+        small= album.publishedDate
+      h5 By #{album.author||'unknown'}
+      p= album.description
+      small Added by #{album.createdBy}

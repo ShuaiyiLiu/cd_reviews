@@ -19,16 +19,16 @@ var model = require('./lib/model-mongodb')(config);
 
 // Albums
 app.use('/albums', require('./lib/crud')(model, images));
-app.use('/api/albums', require('./lib/api')(model));
+//app.use('/api/albums', require('./lib/api')(model));
 
 app.get('/', function(req, res) {
     res.redirect('/albums');
 });
 
 // Basic error handler.
-app.use(function(err, req, res, next) {
-    res.status(500).send('Something broke!');
-});
+//app.use(function(err, req, res, next) {
+//    res.status(500).send('Something broke!');
+//});
 
 // Start the server
 var server = app.listen(config.port, function() {

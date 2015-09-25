@@ -1,0 +1,36 @@
+extends ../base.jade
+
+block content
+  h3 #{action} album
+  form(method="POST", enctype="multipart/form-data")
+    .form-group
+      label(for="title") Title
+      input.form-control(type="text", name="title", id="title", value=album.title)
+    .form-group
+      label(for="author") Artist
+      input.form-control(type="text", name="author", id="author", value=album.author)
+    .form-group
+      label(for="genres") Generes
+      input.form-control(type="text", name="genres", id="genres", value=album.genres)
+    .form-group
+      label(for="composer") Composer
+      input.form-control(type="text", name="composer", id="composer", value=album.composer)
+    .form-group
+      label(for="publishedDate") Date Published
+      input.form-control(type="text", name="publishedDate", id="publishedDate", value=album.publishedDate)
+    .form-group
+      label(for="description") Description
+      input.form-control(type="text", name="description", id="description", value=album.description)
+    .form-group
+      label(for="image") Cover Image
+      input.form-control(type="file", name="image", id="image")
+    .form-group.hidden
+      label(for="imageUrl") Cover Image URL
+      input.form-control(type="text", name="imageUrl", id="imageUrl", value=album.imageUrl)
+    .form-group.hidden
+      label(for="createdBy") Created by
+      input.form-control(type="text", name="createdBy", id="createdBy", value=album.createdBy)
+    .form-group.hidden
+      label(for="createdById") Created by ID
+      input.form-control(type="text", name="createdById", id="createdById", value=album.createdById)
+    button.btn.btn-success(type="submit") Save
