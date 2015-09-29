@@ -17,6 +17,9 @@ app.set('trust proxy', true);
 var images = require('./lib/images')();
 var model = require('./lib/model-mongodb')(config); 
 
+// Serve static files in Express
+app.use(express.static('public'));
+
 // Albums
 app.use('/albums', require('./lib/crud')(model, images));
 //app.use('/api/albums', require('./lib/api')(model));

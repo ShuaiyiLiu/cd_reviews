@@ -14,11 +14,11 @@ block content
 
   .media
     .media-left
-      img(src=album.imageUrl || "http://placekitten.com/g/128/192")
+      img(src=album.imageUrl || "http://placekitten.com/g/128/192"  width="192")
     .media-body
       h4= album.title
         | &nbsp;
         small= album.publishedDate
       h5 By #{album.author||'unknown'}
       p= album.description
-      small Added by #{album.createdBy}
+      
